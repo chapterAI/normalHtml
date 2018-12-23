@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Pockmon</title>
+    <link rel="icon" href="timg.png">
+</head>
+<style>
+    body{
+        margin: 0px;
+        padding:0px;
+        background: black;
+    }
+    .page1{ 
+        width: 100%;
+        height:60px;
+        border-bottom: 2px solid #ffffff;
+        border-top: 2px solid #ffffff;
+        background-color: #ffffff;
+        position: relative;
+        z-index: 0;
+    }
+    .page1 li{
+        width:122.18px;
+        height: 52px;
+        list-style: none;
+        float:left;
+        text-align: center;
+        margin: 0 2px;
+    }
+    .page1 img{
+        vertical-align: top;
+    }
+
+    .page1 #a1{
+        padding: 0 0 0 20px;
+        display:inline-block;
+        width:170px;
+        height:48px;
+        text-align: center;
+        float: left;
+    }
+
+    .page1 ul li a {
+        text-decoration: none;
+        font-size: 14px;
+        text-align: center;
+        line-height: 52px;
+        font-weight: 700;
+        height:52px;
+        display: block;
+        
+    }
+
+    .page1 ul li span:hover{
+        color:#ffffff;
+        transition: 0.5s;
+    }
+
+    #top1{
+        color: #03a9f4;
+    }
+   
+    #top2{
+        color: #ff9600;
+    }
+    #top3{
+        color: #4caf50;
+    }
+    #top4{
+        color: #9c27b0;
+    }
+    #top5{
+        color: #f44336;
+    }
+    #top6{
+        color: #3f51b5;
+    }
+    #top7{
+        color: #795548;
+    }
+    #top8{
+        height:52px;
+        width:150px;
+        line-height: 52px;
+        float: left;
+    }
+    #top8 a{
+        display:block;
+        width:88px;
+        height: 52px;
+        text-decoration: none;
+        color:#555;
+        border-left: 1px solid #d9d9d9;
+        border-right: 1.5px solid #d9d9d9;
+        padding-left: 62px;
+    }
+    #top8 a:hover{
+        opacity: 0.5;
+        transition: 0.5s;
+    }
+
+    #top8 a::before{
+        width:34px;
+        height:34px;
+        font-size: 23px;
+        line-height: 33px;
+        content: "";
+        color: #ffffff;
+        background: #fecf00;
+        border-radius:50%;
+        position: absolute;
+        text-align: center;
+        left:72%;
+        top:11px;
+    }
+
+    #top8-1 span{
+        font-size: 14px;
+        font-weight: 700;
+    }
+
+    .page1 ul{
+        float: left;
+        margin: 0px;
+        padding:0px;
+    }
+
+    .clear:after{
+        content:"";
+        display: block;
+        clear: both;
+    }
+
+    .wrap{
+        width:100%;
+        height: 1000px;
+    }
+
+    @keyframes my-rotate{
+        0%{
+            transform: rotate(0);
+        }
+        100%{
+            transform: rotate(1turn);
+        }
+    
+    }
+    .rotate{
+        position: relative;
+        z-index: -1;
+    }
+
+    .anime{
+        animation: my-rotate 3s linear infinite ;
+    }
+    .search{
+        width:100%;
+        height:100px;
+        text-align: center;
+    }
+    .search span{
+        font-size: 20px;
+        color: #b3eafe;
+        text-shadow:0 0 5px #b3eafe,0 0 5px #b3eafe;
+    }
+
+    .mytext{
+        width:400px;
+        height: 30px;
+        border-top-left-radius:15px;
+        border-bottom-left-radius: 15px;
+        text-align: center;
+        vertical-align: top;
+        font-size: 18px;
+    }
+    
+
+    .mysubmit{
+        width:80px;
+        height:36px;
+        border-top-right-radius:15px;
+        border-bottom-right-radius: 15px;
+        vertical-align: top;
+        background: #b4ebff;
+        border-color:#b4ebff;
+        color: white;
+        font-size:18px;
+        line-height: 30px;
+        text-align: center;
+    }
+
+    .mybotton{
+        width:200px;
+        height:36px;
+        border-radius: 15px;
+        margin-left: 150px;
+        background:#ddfc00;
+        border-color: #ddfc00; 
+        color: white;
+        font-size:18px;
+        line-height: 32px;
+    }
+
+    .list{
+        margin: 0 200px;
+        border: 3px solid #b3eafe;
+        border-top-left-radius:20px;
+        border-bottom-left-radius: 20px; 
+        border-top-right-radius: 20px;
+        border-bottom-right-radius: 20px;
+    }
+    
+    #click-before{
+        text-align:center;
+        font-size: 24px;
+        color: white;
+        text-shadow:0 0 5px #b3eafe,0 0 5px #b3eafe;
+
+    }
+
+    #click-before div{
+        text-align: center;
+    }
+
+    #list-div{
+        margin:0 auto;
+        width: 0;
+        height: 0;
+        border-top:10px solid white;
+        border-right: 10px solid transparent;
+        border-left: 10px solid transparent;
+    }
+
+
+
+    .list-left{
+        float: left; 
+        margin-left:50px ;   
+    }
+
+    .list-left #shuxing{ 
+        text-align: left;
+        width: 450px;
+        font-size: 30px;
+        height: 30px;
+        color: #b4ebff;       
+        display: block;
+        border: none;
+        border-bottom: 2px solid #b4ebff;
+        border-top-left-radius:0px;
+        border-bottom-left-radius: 0px; 
+        border-top-right-radius: 0px;
+        border-bottom-right-radius: 0px;
+        cursor: text;
+    }
+
+    
+
+    .list-left div{
+        margin:5px 10px;
+        text-align: center;
+        width: 130px;
+        height: 27px;
+        color: white;
+        display: inline-block; 
+        line-height: 27px;
+        border: 1px solid white;
+        border-top-left-radius:20px;
+        border-bottom-left-radius: 20px; 
+        border-top-right-radius: 20px;
+        border-bottom-right-radius: 20px;
+        cursor: pointer;
+    }
+
+
+    .list-right{
+        float: left;
+    }
+
+    .list-bottom{
+
+    }
+
+
+    #list-div-after{
+        margin:0 auto;
+        width: 0;
+        height: 0;
+        border-bottom:10px solid white;
+        border-right: 10px solid transparent;
+        border-left: 10px solid transparent;
+    }
+
+    .texing{
+        margin-left:50px;
+        border: 3px solid #b3eafe;
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+        border-top-right-radius: 20px;
+        border-bottom-right-radius: 20px;
+        width:465px;
+        height:146px;
+    }
+    
+    .texing p{
+        font-size: 20px;
+        height: 30px;
+        color: #b4ebff; 
+        margin-left:50px;
+    }
+
+    .texing select{
+        margin-left:50px;
+        width:350px;
+        height:38px;
+        font-size:20px;
+        color:grey;
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+        border-top-right-radius: 20px;
+        border-bottom-right-radius: 20px;
+    }
+
+    .tujian{
+        margin-top:30px;
+        margin-left:50px;
+        border: 3px solid #b3eafe;
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+        border-top-right-radius: 20px;
+        border-bottom-right-radius: 20px;
+        width:465px;
+        height:146px;
+    }
+
+    .tujian p{
+        font-size: 20px;
+        height: 30px;
+        color: #b4ebff; 
+        margin-left:50px;
+    }
+
+    .tujian select{
+        margin-left:50px;
+        width:350px;
+        height:38px;
+        font-size:20px;
+        color:grey;
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+        border-top-right-radius: 20px;
+        border-bottom-right-radius: 20px;
+    }
+
+    #click-hidden{
+        display: none;
+        padding-top:50px;
+
+    }
+
+</style>
+<body>
+        <div class="wrap">
+            <div class="page1">
+                <a href="https://cn.portal-pokemon.com/" id="a1"><img src="logo.png" alt="宝可梦logo" width=130px height=47.85px></a>
+                <ul >
+                    <li>
+                        <a href="https://cn.portal-pokemon.com/anime/" id="top1">
+                                <span>电视动画系列</span>
+                        </a>
+                        <div style="background-color:#03a9f4;height:4px;vertical-align: bottom;" class="change"></div>
+                    </li>
+                    
+                    <li>
+                        <a href="https://cn.portal-pokemon.com/movie/" id="top2">
+                                <span>电影</span>
+                        </a>
+                        <div style="background-color:#ff9600;height:4px;vertical-align: bottom" class="change"></div>
+                    </li>
+                    <li>
+                        <a href="https://cn.portal-pokemon.com/goods/" id="top3">
+                                <span>商品</span>
+                        </a>
+                        <div style="background-color:#4caf50;height:4px;vertical-align: bottom" class="change"></div>
+                    </li>
+                    <li>
+                        <a href="https://cn.portal-pokemon.com/apps/" id="top4">
+                                <span>应用程序</span>
+                        </a>
+                        <div style="background-color:#9c27b0;height:4px;vertical-align: bottom" class="change"></div>
+                    </li>
+                    <li>
+                        <a href="https://cn.portal-pokemon.com/game/" id="top5">
+                                <span>游戏</span>
+                        </a>
+                        <div style="background-color:#f44336;height:4px;vertical-align: bottom" class="change"></div>
+                    </li>
+                    <li>
+                        <a href="https://cn.portal-pokemon.com/card/" id="top6">
+                                <span>卡牌游戏</span>
+                        </a>
+                        <div style="background-color:#3f51b5;height:4px;vertical-align: bottom" class="change"></div>
+                    </li>
+                    <li>
+                        <a href="https://cn.portal-pokemon.com/event/" id="top7">
+                                <span>活动</span>
+                        </a>
+                        <div style="background-color:#795548;height:4px;vertical-align: bottom" class="change"></div>
+                    </li>
+                </ul>
+                <div id="top8">
+                    <a href="https://cn.portal-pokemon.com/play/pokedex" id="top8-1">
+                        <span>宝可梦图鉴</span>
+                    </a>
+                </div>
+            </div>
+            <div class="rotate">
+                <img src="abg.png" alt="rotate" class="anime"/>    
+            </div>
+            <div class="search">
+                <span>使用名称或图鉴编号搜索</span><br/><br/>
+                <input type="text" class="mytext" name="find"><input type="submit" class="mysubmit" name="find" value="搜索"><input type="submit" class="mybotton" value="随机搜索">
+            </div>
+        </div> 
+        <div class="list">
+            <div id="click-before" onclick="appear()">
+                <span>进阶搜索</span>
+                <br/>
+                <div style="height:12px;"></div>
+                <div>
+                    <div id="list-div"></div>
+                </div>
+            </div>
+            <div id="click-hidden">
+                <div class="list-left">
+                    <div id="shuxing">属性</div><br/>
+                    <div style="color:white;border-color: white" >一般</div>
+                    <div style="color:#dc6900;border-color:#dc6900">格斗</div>
+                    <div style="color:#78dcff;border-color:#78dcff">飞行</div><br>
+                    <div style="color:#d28cd2;border-color: #d28cd2">毒</div>
+                    <div style="color:#fac85a;border-color: #fac85a">地面</div>
+                    <div style="color:#b48c64;border-color: #b48c64">岩石</div><br>
+                    <div style="color:#46c846;border-color: #46c846">虫</div>
+                    <div style="color:#a08cff;border-color: #a08cff">幽灵</div>
+                    <div style="color:#aac8f0;border-color: #aac8f0">钢</div><br>
+                    <div style="color:#ff6900;border-color: #ff6900">火</div>
+                    <div style="color:#14b9ff;border-color: #14b9ff">水</div>
+                    <div style="color:#b4f000;border-color: #b4f000">草</div><br>
+                    <div style="color:#ffe100;border-color: #ffe100">电</div>
+                    <div style="color:#f08cdc;border-color: #f08cdc">超能力</div>
+                    <div style="color:#14f5ff;border-color: #14f5ff">冰</div><br>
+                    <div style="color:#5078dc;border-color: #5078dc">龙</div>
+                    <div style="color:#787878;border-color: #787878">恶</div>
+                    <div style="color:#ffafdc;border-color: #ffafdc">妖精</div><br>
+                </div>
+                <div class="list-right">
+                    <div class="texing">
+                        <p>特性</p>
+                        <select name="" id="" >
+                            <option value="">所有</option>
+                            <option value="">适应力</option>
+                            <option value="">飞行皮肤</option>
+                            <option value="">引爆</option>
+                            <option value="">气闸</option>
+                            <option value="">愤怒穴位</option>
+                            <option value="">危险预知</option>
+                            <option value="">沙穴</option>
+                            <option value="">气场破坏</option>
+                            <option value="">梦魇</option>
+                            <option value="">蓄力池</option>
+                            <option value="">战斗盔甲</option>
+                            <option value="">异兽提升</option>
+                            <option value="">怒火冲天</option>
+                            <option value="">健壮胸肌</option>
+                            <option value="">猛火</option>
+                            <option value="">防弹</option>
+                            <option value="">叶绿素</option>
+                            <option value="">无关天气</option>
+                            <option value="">变色</option>
+                            <option value="">绝对睡眠</option>
+                            <option value="">好胜</option>
+                            <option value="">诅咒之躯</option>
+                            <option value="">软弱</option>
+                            <option value="">降雨</option>
+                            <option value="">终结之地</option>
+                            <option value="">日照</option>
+                            <option value="">干燥皮肤</option>
+                            <option value="">晴天</option>
+                        </select>
+                    </div>
+
+                    <div class="tujian">
+                        <p>图鉴No. 1 - 807</p>
+                        <select name="" id="" >
+                            <option value="">所有</option>
+                            <option value="">妙蛙种子</option>
+                            <option value="">妙蛙草</option>
+                            <option value="">妙蛙花</option>
+                            <option value="">超级妙蛙花</option>
+                            <option value="">小火龙</option>
+                            <option value="">火恐龙</option>
+                            <option value="">喷火龙</option>
+                            <option value="">超级喷火龙X</option>
+                            <option value="">超级喷火龙Y</option>
+                            <option value="">杰尼龟</option>
+                            <option value="">卡米龟</option>
+                            <option value="">水箭龟</option>
+                            <option value="">超级水箭龟</option>
+                            <option value="">绿毛虫</option>
+                            <option value="">铁甲蛹</option>
+                            <option value="">巴大蝶</option>
+                            <option value="">独角虫</option>
+                            <option value="">铁壳蛹</option>
+                            <option value="">大针蜂</option>
+                            <option value="">超级大针蜂</option>
+                            <option value="">波波</option>
+                            <option value="">比比鸟</option>
+                            <option value="">大比鸟</option>
+                            <option value="">超级大比鸟</option>
+                            <option value="">小拉达</option>
+                            <option value="">拉达</option>
+                            <option value="">烈雀</option>
+                            <option value="">大烈雀 </option>
+                        </select>
+                    </div>
+                </div>
+                <div class="clear"></div>
+                <div class="list-bottom">
+                    
+                </div>
+                <div style="height:12px;"></div>
+                <div>
+                    <div id="list-div-after"></div>
+                </div>
+            </div>
+        </div>
+       
+<script>
+    function appear() {
+        var da=document.getElementById("click-hidden");
+        var db=document.getElementById("click-before");
+        db.style.display="none";
+        da.style.display="block";
+    }
+</script>
+</body>
+</html>
